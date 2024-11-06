@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+
+      <label for="name">Nombre: </label>
+      <input type="text" id="name" name="name" [(ngModel)]="name" required>
+
+      <label for="age">Edad: </label>
+      <input type="number" id="age" name="age" [(ngModel)]="age" required>
+
+      <button type="button" (click)="onValidate()">Validar</button>
+      <button type="submit">Enviar</button>
+
+      <p *ngIf="errorMenssage">{{errorMenssage}}</p>
+      <p *ngIf="succesMessage">{{succesMessage}}</p>
+      
+    </form>
+</ion-content>
